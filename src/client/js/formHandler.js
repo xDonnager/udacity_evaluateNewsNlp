@@ -14,11 +14,11 @@ function handleSubmit(event) {
     headers: { "Content-Type": "application/json" },
   })
     .then((res) => res.json())
-    .then(function (res) {
+    .then((res) => {
+      console.log(res);
       document.getElementById("results").innerHTML = res.message;
     })
     .catch((err) => console.log(err));
 }
-
 
 export { handleSubmit };

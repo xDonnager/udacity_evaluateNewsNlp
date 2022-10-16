@@ -2,15 +2,15 @@ const path = require("path");
 const express = require("express");
 const dotenv = require("dotenv").config();
 const fetch = require("node-fetch");
-const cors = require('cors');
+const cors = require("cors");
 
 const app = express();
 app.use(express.static("dist"));
 app.use(cors());
 //parses incoming requests with JSON payloads and is based on body-parser.
-app.use(express.json())
+app.use(express.json());
 // parses incoming requests with urlencoded payloads and is based on body-parser.
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }));
 
 console.log("using dirname", __dirname);
 
@@ -32,13 +32,33 @@ app.post("/sentiment", async function (req, res) {
   const params = new URLSearchParams();
   params.append("key", meaningApiKey);
   params.append("lang", "auto");
-  params.append("url", srcUrl)
+  params.append("url", srcUrl);
 
   const response = await fetch("https://api.meaningcloud.com/sentiment-2.1", {
     method: "POST",
     body: params,
   });
   const data = await response.json();
-  console.log(data);
-  res.send(data);
+
+  if (data.status.code === "0") return res.send(formatSentimentData(data));
+
+  return res.status(data.status.code).json({ error: data.status.msg });
 });
+
+const scoreTagDictionary = {
+  "P+": "strong positive",
+  P: "positive",
+  NEU: "neutral",
+  N: "negative",
+  "N+": "negative",
+  NONE: "none",
+};
+
+function formatSentimentData(sentData) {
+  const { score_tag, subjectivity, sentence_list } = sentData;
+  return {
+    scoreTag: scoreTagDictionary[score_tag],
+    subjectivity: subjectivity.toLowerCase(),
+    sentences: sentence_list.map((sentenceObject) => sentenceObject.text),
+  };
+}
