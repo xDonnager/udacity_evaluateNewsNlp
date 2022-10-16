@@ -24,14 +24,17 @@
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input id="url" type="text" name="url" value="" onblur="onBlur()" placeholder="Url to analyse">
+                    <p class="field__info" style="display: none;">Whops! Seems that is not a valid URL, check the spelling please!</p>
+                    <input id="analyse" type="submit" name="" value="Analyse" idonclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
 
             <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+                <strong>Sentiment Analysis Results:</strong>
+                <div id="results">
+
+                </div>
             </section>
         </main>
 
