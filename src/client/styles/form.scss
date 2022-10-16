@@ -1,7 +1,7 @@
 form {
-    border: 1px solid #545454;
-    border-radius: 3px;
+    border-radius: 6px;
     padding: 40px;
+    background: #FFF;
 }
 
 input {
@@ -9,4 +9,9 @@ input {
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
+}
+
+#analyse {
+    background: #203A43;
+    color: #FFF
 }
