@@ -1,10 +1,12 @@
 .analysis {
-    div {
+  div {
+    line-height: 2rem;
 
-        line-height: 2rem;
-
-        ul {
-            margin: 5% auto;
-        }
-    }   
+    ul {
+      margin: 5% auto;
+      li {
+        margin: 2%;
+      }
+    }
+  }
 }

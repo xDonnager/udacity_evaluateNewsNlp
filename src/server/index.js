@@ -4,6 +4,7 @@ const dotenv = require("dotenv").config();
 const fetch = require("node-fetch");
 const cors = require("cors");
 
+// ****** Variables/ Middlewares ******
 const app = express();
 app.use(express.static("dist"));
 app.use(cors());
@@ -12,18 +13,13 @@ app.use(express.json());
 // parses incoming requests with urlencoded payloads and is based on body-parser.
 app.use(express.urlencoded({ extended: true }));
 
-console.log("using dirname", __dirname);
-
 const { MEANING_API_KEY: meaningApiKey, PORT } = process.env;
 
+
+// ****** Main endpoints ******
 app.get("/", function (req, res) {
   res.sendFile("dist/index.html");
   //res.sendFile(path.resolve('src/client/views/index.html'))
-});
-
-// designates what port the app will listen to for incoming requests
-app.listen(PORT, function () {
-  console.log(`Example app listening on port ${PORT}!`);
 });
 
 app.post("/sentiment", async function (req, res) {
@@ -45,6 +41,13 @@ app.post("/sentiment", async function (req, res) {
   return res.status(data.status.code).json({ error: data.status.msg });
 });
 
+app.listen(PORT, function () {
+  console.log(`Example app listening on port ${PORT}!`);
+});
+// ****** End Main endpoints ******
+
+
+// ****** Aux functions ******
 const scoreTagDictionary = {
   "P+": "strong positive",
   P: "positive",
