@@ -11,17 +11,14 @@
         <link rel="stylesheet" href="/styles/header.css">
         <link rel="stylesheet" href="/styles/form.css">
         <link rel="stylesheet" href="/styles/footer.css">
+        <link rel="stylesheet" href="/styles/analysis.css">
     </head>
 
     <body>
 
         <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                IAnalyse
-            </div>
+            <div class=""><h1>🔎</h1></div>
+            <div class=""><h1>IAnalyse</h1></div>
         </header>
 
         <main>
@@ -29,12 +26,12 @@
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <input id="url" type="text" name="url" value="" onblur="onBlur()" placeholder="Url to analyse">
                     <p class="field__info" style="display: none;">Whops! Seems that is not a valid URL, check the spelling please!</p>
-                    <input id="analyse" type="submit" name="" value="Analyse" idonclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input id="analyse" type="submit" name="" value="✨Analyse✨" idonclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
 
-            <section>
-                <strong>Sentiment Analysis Results:</strong>
+            <section class="analysis">
+                <h2>🔮 Sentiment Analysis Results:</h2>
                 <hr>
                 <div id="results"></div>
             </section>

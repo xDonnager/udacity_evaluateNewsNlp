@@ -1,3 +1,6 @@
+$white-letter-color: #FFF;
+$font-stack: 'Montserrat', sans-serif;
+
 body {
     display: flex;
     flex-direction: column;
@@ -5,9 +8,16 @@ body {
     background: #0F2027;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
-    color: #FFF;
-    font-family: 'Montserrat', sans-serif;
+    color: $white-letter-color;
+    font-family: $font-stack;
     font-size: 1.5em;
+
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
 }
 
 main {

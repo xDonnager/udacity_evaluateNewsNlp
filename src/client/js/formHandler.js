@@ -45,11 +45,11 @@ function prettyAnalysis(analysis) {
   const fragment = document.createDocumentFragment();
 
   const scoreTagTitle = document.createElement("h2");
-  scoreTagTitle.innerText = `Polarity - ${capitalizeFirstLetter(scoreTag)}`;
+  scoreTagTitle.innerText = `🧭 Polarity - ${capitalizeFirstLetter(scoreTag)}`;
   fragment.appendChild(scoreTagTitle);
 
   const subjectivityTitle = document.createElement("h3");
-  subjectivityTitle.innerText = `Subjectivity - ${capitalizeFirstLetter(
+  subjectivityTitle.innerText = `🌗 Subjectivity - ${capitalizeFirstLetter(
     subjectivity
   )}`;
   fragment.appendChild(subjectivityTitle);
