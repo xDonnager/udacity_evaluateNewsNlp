@@ -1,5 +1,5 @@
 <!-- Add banner here -->
-
+export NODE_OPTIONS=--openssl-legacy-provider
 # Evaluate news with NLP App Project
 This is the last project for the Udacity frontend web development nanodegree.
 
