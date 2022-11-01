@@ -1,6 +1,5 @@
 // URL validation
 function validateUrl(inputText) {
-  console.log("::: Running validateUrl :::", inputText);
   if (inputText.trim().length === 0) return false;
   const regexUrl =
     /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
@@ -35,7 +34,6 @@ function prettyAnalysis(analysis) {
     const li = document.createElement("li");
     li.innerText = `★ ${sentence}`;
     sentenceList.appendChild(li);
-    console.log(li);
   });
   fragment.appendChild(sentenceList);
   document.getElementById("results").appendChild(fragment);
@@ -57,11 +55,16 @@ function changeButtonStatus(action) {
   }
 }
 
-function renderWtf(){
+function renderMsg(type){
   const divWtf = document.createElement("div");
-  divWtf.innerText = "¯\\ _ (ツ) _ /¯";
+  if(type == "wtf"){
+    //divWtf.innerHTML= "¯\\ _ (ツ) _ /¯";
+    divWtf.innerHTML= "<p>¯\\ _ (ツ) _ /¯</p><p>Try analysing something else</p>";
+  } else {
+    divWtf.innerHTML = "<p>(*ﾟOﾟ*)</p><p>Ooops... something went wrong</p>";
+  }
+
   divWtf.style.textAlign = "center";
-  divWtf.style.fontSize = "3rem";
   divWtf.style.marginTop = "3rem";
   document.getElementById("results").appendChild(divWtf);
 }
@@ -79,5 +82,5 @@ export {
   clearPreviousAnalysis,
   resetForm,
   changeButtonStatus,
-  renderWtf
+  renderMsg
 };

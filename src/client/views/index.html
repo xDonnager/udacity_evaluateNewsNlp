@@ -23,7 +23,7 @@
 
         <main>
             <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
+                <form onsubmit="return Client.handleSubmit(event)">
                     <input id="url" type="text" name="url" value="" onblur="onBlur()" placeholder="Url to analyse">
                     <p class="field__info" style="display: none;">Whops! Seems that is not a valid URL, check the spelling please!</p>
                     <input id="analyse" type="submit" name="" value="✨Analyse✨" idonclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
@@ -42,14 +42,14 @@
             <p>Made with 🎔 - 2022 xDonnager</p>
           </footer>
         
-          <!-- <script>
+          <script>
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
                 window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js');
+                    navigator.serviceWorker.register('./sw.js');
                 });
             }
-           </script> -->
+           </script>
     </body>
 </html>

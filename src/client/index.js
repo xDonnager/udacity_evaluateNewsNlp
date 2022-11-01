@@ -6,7 +6,7 @@ import {
   clearPreviousAnalysis,
   resetForm,
   changeButtonStatus,
-  renderWtf
+  renderMsg
 } from "./js/helpers";
 
 import { handleSubmit } from "./js/formHandler";
@@ -26,5 +26,5 @@ export {
   resetForm,
   changeButtonStatus,
   handleSubmit,
-  renderWtf
+  renderMsg
 };

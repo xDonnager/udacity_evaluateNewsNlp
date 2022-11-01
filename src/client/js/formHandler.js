@@ -23,11 +23,14 @@ function handleSubmit(event) {
         Client.resetForm();
         Client.changeButtonStatus("enable")
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        Client.renderMsg("err");
+        throw err;
+      });
 
   } else {
     Client.showAlertInvalidInput();
-    Client.renderWtf();
+    Client.renderMsg("wtf");
     setTimeout(() => {
       Client.hideAlertInvalidInput();
     }, 3000);

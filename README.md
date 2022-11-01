@@ -1,6 +1,6 @@
 <!-- Add banner here -->
 
-# Evaluate new with NLP App Project
+# Evaluate news with NLP App Project
 This is the last project for the Udacity frontend web development nanodegree.
 
 The goal of this project is to get practice with:
@@ -28,26 +28,34 @@ You could spend years and get a masters degree focusing on the details of creati
 
 # Installation
 [(Back to top)](#table-of-contents)
+
 `cd` into your new folder and run:
 - `npm install` 
 in order to install all the required dependencies and packages.
 
 # Usage
 [(Back to top)](#table-of-contents)
+
 A valid apikey for Meaning Cloud API must be provided in order to use this application. Create a copy of the .env.example file and rename it to .env. Update the variable `MEANING_API_KEY` with your apikey
 
 *MeaningCloud API*: You can find the API [here](https://www.meaningcloud.com/developer/sentiment-analysis). Once you create an account with MeaningCloud, you will be given a license key to start using the API. 
 
-##### Development mode
-**to run UI in http://localhost:8080/**
+## Development mode
+Run UI in http://localhost:8080/
+
 - `npm run build-dev`
-**Run the Express server on port 8081**
+
+Run the Express server on port 8081
+
 - `npm start`
 
-##### Production mode
-**generate a `dist` folder for prod**
+## Production mode
+Generate a `dist` folder for prod
+
 - `npm run build-prod`
-**Run the Express server on port 8081**
+
+Run the Express server on port 8081
+
 - `npm start`
 
 
