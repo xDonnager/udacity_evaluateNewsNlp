@@ -1,3 +1,5 @@
+const hostname = process.env.HOSTNAME || `http://localhost:8081`
+
 function handleSubmit(event) {
   event.preventDefault();
   Client.clearPreviousAnalysis();
@@ -11,7 +13,7 @@ function handleSubmit(event) {
     const body = { srcUrl: formInputUrl };
 
     console.log("::: Form Submitted :::");
-    fetch("http://localhost:8081/sentiment", {
+    fetch(`https://nlp-news-app-analyse.herokuapp.com/sentiment`, {
       method: "POST",
       body: JSON.stringify(body),
       headers: { "Content-Type": "application/json" },
