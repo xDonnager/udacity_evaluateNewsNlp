@@ -17,7 +17,7 @@
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotnvm v": "^16.0.3",
+    "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "node-fetch": "^2.6.7",
     "webpack": "^4.35.3",
