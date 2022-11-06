@@ -22,6 +22,7 @@ app.get("/", function (req, res) {
 });
 
 app.post("/sentiment", async function (req, res) {
+  console.log(req)
   try{
     const { srcUrl } = req.body;
 
@@ -36,8 +37,8 @@ app.post("/sentiment", async function (req, res) {
     });
     const data = await response.json();
   
-    if (data.status.code === "0") {
-      return res.send(formatSentimentData(data))
+    if (data && data.status.code === "0") {
+      return res.json(formatSentimentData(data))
     } else {
       return res.status(data.status.code).json({ error: data.status.msg });
     };
