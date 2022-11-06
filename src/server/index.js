@@ -35,7 +35,7 @@ app.post("/sentiment", async function (req, res) {
       method: "POST",
       body: params,
     });
-    const data = await response.json();
+    const data = await response.json(); 
   
     if (data && data.status.code === "0") {
       return res.json(formatSentimentData(data))
