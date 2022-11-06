@@ -50,8 +50,7 @@ app.post("/sentiment", async function (req, res) {
 });
 
 app.listen(PORT || 8081, () => {
-  const port = server.address().port;
-  console.log(`Express is running on port ${port}`);
+  console.log(`Express is running on port ${PORT}`);
 });
 // ****** End Main endpoints ******
 
